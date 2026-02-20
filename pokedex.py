@@ -14,11 +14,12 @@ def get_pokemon_info(name):
     else:
         print(f"Failed to retrieve data {response.status_code}")
 
-pokemon_name = input("Enter a pokemon name: ").lower()
+pokemon_name = input("Enter a pokemon name: ").lower().strip()
 pokemon_info = get_pokemon_info(pokemon_name)
 
 if pokemon_info:
     print(f"Name: {pokemon_info["name"].capitalize()}")
     print(f"Id: {pokemon_info["id"]}")
     print(f"Height: {pokemon_info["height"]}")
+
     print(f"Weight: {pokemon_info["weight"]}")
